@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "27359dfa-98c4-4962-8be0-7cc276b94b89",
+		"name": "ZipRangeRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Zipranges",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/zipranges/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Id Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/zipranges/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Find Store by Zipcode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/zipranges/findStore/30000000",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges",
+						"findStore",
+						"30000000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Non-Existing Store Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"storeCode\": \"LOJA_MOEMA\",\n        \"rangeStart\": \"80000000\",\n        \"rangeEnd\": \"90000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Already Covered Zip Range",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"20000000\",\n        \"rangeEnd\": \"30000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Invalid Formats Zip Code",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"8000000\",\n        \"rangeEnd\": \"9000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Successfull",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"80000000\",\n        \"rangeEnd\": \"90000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Non-Existing Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"id\": 10,\n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"80000000\",\n        \"rangeEnd\": \"90000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Non-Existing Storecode",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"id\": 1,\n        \"storeCode\": \"LOJA_MOEMA\",\n        \"rangeStart\": \"80000000\",\n        \"rangeEnd\": \"90000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Invalid Zip Code Format",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"id\": 1,\n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"800000\",\n        \"rangeEnd\": \"900000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Already Covered Zip Range",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"id\": 1,\n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"20000000\",\n        \"rangeEnd\": \"30000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Successfull",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    { \n        \"id\": 1,\n        \"storeCode\": \"LOJA_PINHEIROS\",\n        \"rangeStart\": \"80000000\",\n        \"rangeEnd\": \"90000000\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/zipranges",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Not Found",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/zipranges/10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Success",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/zipranges/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"zipranges",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
